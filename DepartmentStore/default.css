@@ -1,0 +1,226 @@
+/*초기화*/
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+}
+body {
+    font-family: 'NG', 'Helvetica', sans-serif;
+    min-width: 760px;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+@font-face {
+    font-family: 'NG';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot);
+    src: url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+        url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff2) format('woff2'),
+        url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff) format('woff'),
+        url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.ttf) format('truetype');
+}
+/*특수*/
+.hidden {
+    display: none;
+}
+.body > p {
+    position: fixed;
+    right: 5px;
+    bottom: 5px; 
+    border: 1px solid red;
+}
+.gototop {
+    position: fixed;
+    left: 5px;
+    bottom: 5px; 
+    border: 1px solid red;
+    /*text-indent: -99999px;*/
+}
+.noheader {
+    visibility: hidden;
+    height: 0px;
+}
+/*메인 헤더*/
+.main_header {
+    height: 45px;
+    line-height: 45px;
+    background: #da9529;
+    background: #fff;
+}
+.main_header > h1 {
+    color: #231f20;
+    font-size: 24px;
+    text-align: center;
+}
+/*메인 메뉴*/
+.main_gnb {
+    background: #231f20;
+    overflow: hidden;
+}
+.main_gnb > ul {
+    overflow: hidden;
+    margin-left: 5px;
+}
+.main_gnb > ul > li {
+    float: left;
+    position: relative;
+    height: 40px;
+}
+.main_gnb a {
+    display: block;
+    margin-top: 5px;
+    padding: 5px 15px 6px 15px;
+    color: #fff;
+}
+.main_gnb a:hover {
+    color: #da9529; 
+}
+.main_gnb a:before {
+    display: block;
+    content: '';
+    width: 1px;
+    height: 15px;
+    position: absolute;
+    top: 13px;
+    left: -1px;
+    border-left: 1px solid #da9529;
+}
+.main_gnb a.active {
+    background: #da9529;
+    border-radius: 3px;
+    color: #fff;
+/*    font-weight: bold;*/
+}
+.main_gnb a.active:before {
+    left: 0px;
+}
+/*콘텐츠 메뉴 토글 버튼*/
+.main_header > .toggleBtn_content_lnb {
+    background: #0a9882;
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: 5px;
+    top: 5px;
+    border-radius: 3px;
+    text-indent: -99999px;
+    overflow: hidden;
+}
+.main_header > .toggleBtn_content_lnb:before {
+    content: "";
+    position: absolute;
+    top: 4px; left: 4px;
+    width: 28px;
+    height: 4px;
+    border-top: 12px double #fff;
+    border-bottom: 12px double #fff;
+    cursor: pointer;
+}
+#toggleBtn_content_lnb:checked + .content_lnb {
+    display: block;
+} 
+/*콘텐츠*/
+.main_wrap {
+    background: #f7f7f7; 
+    overflow: hidden;
+}
+/*콘텐츠 메뉴 - 콘텐츠*/
+.content_wrap > .content_lnb {
+    display: none;
+/*    display: block;*/
+}
+.content_wrap > .content_lnb > ul > li > a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    color: #666666;
+    border-bottom: 2px solid #eee;
+}
+.content_wrap >.content_lnb > ul > li > a:hover {
+    text-decoration: underline;
+}
+.content_wrap >.content_lnb > ul > li > a:active {
+    color: #231f20;
+}
+/*콘텐츠 본문 - 콘텐츠*/
+.main_wrap > .content_wrap {
+/*    padding-right: 200px;*/
+/*    border: 1px solid lime;*/
+}
+.main_wrap > .content_wrap:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.content_group {
+    float: left;
+    margin-right: -200px;
+    width: 100%;
+    *width: 99.9%; /*스타핵ie7버그*/
+    background: #fff;
+    min-height: 598px;
+}  
+/*섹션 - 콘텐츠*/
+.content_section { 
+/*    border: 1px solid red;*/
+}
+.content_section > .content_header { 
+    padding: 15px; 
+    color: #0a9882;
+}
+.content_section > .content_body { 
+    padding: 15px;  
+    color: #231f20;
+}
+/*푸터*/
+.main_footer {
+    padding: 10px;
+    border-top: 1px solid #231f20;
+    text-align: center;
+}
+.main_footer h4 {
+    color: #bdb7af;
+}
+/*반응형*/
+@media (min-width: 768px) {
+    
+}
+@media (min-width: 768px) and (max-width: 1024px) { 
+    .main_header {
+        height: 60px;
+        line-height: 60px;
+    } 
+    .main_header > .toggleBtn_content_lnb {
+        top: 12px;
+    }
+    .content_wrap > .content_lnb {
+        float:left; 
+        width: 200px;
+    }
+}
+@media (min-width: 1025px) {
+    .main_header {
+        height: 100px;
+        line-height: 100px;
+        padding-left: 20px;
+    }
+    .main_header > h1 {
+        text-align: left;
+    }
+    .main_header > .toggleBtn_content_lnb {
+        display: none;
+    }
+    .content_wrap > .content_lnb {
+        float:left; 
+        display: block;
+        width: 200px;
+    }
+}

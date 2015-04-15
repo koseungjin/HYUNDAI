@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--<mata name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1,maximum-scale=2, user-scalable=no">-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+    <title>모바일 기초</title>
+    <link rel="stylesheet" type="text/css" href="default.css">
+    <style>
+        
+    </style>
+</head>
+<body class="body" onload="showWindowSize();" onresize="showWindowSize();">
+    <!--태스트-->
+    <p>윈도우 사이즈</p>
+    <div class="gototop"><a href="#totop">최상으로</a></div>
+    <!--시작-->
+    <div id="totop" class="wrap">
+        <header class="main_header">
+            <label class="toggleBtn_content_lnb" for="toggleBtn_content_lnb">콘텐츠 메뉴</label>
+            <h1>현대백화점</h1>
+        </header>
+        <nav class="main_gnb">
+            <h2 class="noheader">메인 메뉴</h2>
+            <ul>
+                <li><a href="#">콘텐츠</a></li>
+                <li><a href="#">클라이언트</a></li>
+                <li><a href="#">디바이스</a></li>
+                <li><a href="#" class="active">계정</a></li>
+            </ul>
+        </nav>
+        <div class="main_wrap">
+            <div class="content_wrap">
+                <input id="toggleBtn_content_lnb" class="hidden" type="checkbox"/>
+                <nav class="content_lnb">
+                    <h2 class="noheader">계정 관리</h2>
+                    <ul>
+                        <li><a href="#">목록</a></li>
+                        <li><a href="#">로그 조회</a></li> 
+                    </ul>
+                </nav>
+                <div class="content_group">
+                    <section class="content_section">
+                        <header class="content_header"> 
+                            <h3>목록</h3>
+                        </header>
+                        <div class="content_body">
+                            <p>목록</p>
+                        </div>
+                    </section> 
+                    <section class="content_section">
+                        <header class="content_header"> 
+                            <h3>로그 조회</h3>
+                        </header>
+                        <div class="content_body">
+                            <p>로그 조회</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <footer class="main_footer">
+            <h4>COPYRIGHTⓒ HYUNDAI DEPARTMENT STORE GROUP Co. Ltd. ALL RIGHTS RESERVED.</h4>
+        </footer>
+    </div>
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="default.js"></script>
+</body>
+</html>
