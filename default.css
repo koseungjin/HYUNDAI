@@ -142,6 +142,7 @@ a {
     line-height: 40px;
     padding-left: 20px;
     color: #666666;
+    font-size: 14px;
     border-bottom: 2px solid #eee;
 }
 .content_wrap >.content_lnb > ul > li > a:hover {
@@ -152,8 +153,7 @@ a {
 }
 /*콘텐츠 본문 - 콘텐츠*/
 .main_wrap > .content_wrap {
-/*    padding-right: 200px;*/
-/*    border: 1px solid lime;*/
+    border: 1px solid lime;
 }
 .main_wrap > .content_wrap:after {
     content: "";
@@ -171,6 +171,10 @@ a {
 /*섹션 - 콘텐츠*/
 .content_section { 
 /*    border: 1px solid red;*/
+    display: none;
+}
+.active {
+    display: block;
 }
 .content_section > .content_header { 
     padding: 15px; 
@@ -189,6 +193,74 @@ a {
 .main_footer h4 {
     color: #bdb7af;
 }
+/*폼*/
+.form_unit {
+    padding: 2px 0;
+    max-width: 300px;
+}
+.form_unit > label { 
+/*    background: #ccc;*/
+    float: left; 
+/*    padding: 0 5px;*/
+    padding-top: 1px;
+    min-width: 100px;
+    height: 32px;
+    line-height: 33px;
+    font-size: 14px;
+/*    box-sizing: border-box;*/
+} 
+.form_unit > span {
+    display: block;
+    overflow: hidden;
+} 
+.form_unit > span > input { 
+    padding: 0 5px;
+    width: 100%; 
+    height: 32px;
+    line-height: 33px;
+    box-sizing: border-box;
+}
+.form_unit > select { 
+    height: 32px;
+    padding: 0 5px;
+}
+.form_unit > select > option { 
+    
+}
+.form_unit > button { 
+    margin-top: 15px;
+/*    float: right;*/
+    left: 220px;
+    position: relative;
+/*    right: 0;*/
+    padding: 0 25px;
+    height: 32px;
+    line-height: 32px;
+}
+/*리스트 - 폼*/
+.form_list {
+    margin-top: 10px;
+    border: 1px solid #eee;
+    font-size: 12px;
+/*    padding: 5px;*/
+} 
+.form_list > li {
+    border-bottom: 1px solid #eee;
+}
+.form_list > li:last-child {
+    border-bottom: 0px solid #eee;
+}
+.form_list > li > span {
+    display: inline-block;
+/*    float: left;*/
+    padding: 5px;
+/*    margin-bottom: 5px;*/
+}
+/*
+.form_unit > button[type="submit"] { 
+    
+}
+*/
 /*반응형*/
 @media (min-width: 768px) {
     
@@ -204,6 +276,10 @@ a {
     .content_wrap > .content_lnb {
         float:left; 
         width: 200px;
+/*        margin-right: 200px;*/
+    }
+    .content_wrap > .content_body {
+/*        padding-right: 200px;*/
     }
 }
 @media (min-width: 1025px) {
@@ -218,9 +294,12 @@ a {
     .main_header > .toggleBtn_content_lnb {
         display: none;
     }
+    .content_wrap {
+        padding-right: 200px;
+    }
     .content_wrap > .content_lnb {
         float:left; 
-        display: block;
         width: 200px;
+        display: block;
     }
 }

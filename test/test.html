@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1,maximum-scale=2, user-scalable=no"> 
+    <title>태스트 페이지</title>
+    <style>
+    /*초기화*/
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    html, body {
+        height: 100%;
+    }
+    body {
+        font-family: 'NG', 'Helvetica', sans-serif;
+/*        min-width: 760px;*/
+    }
+    input {
+        font-family: 'NG', 'Helvetica', sans-serif;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+    }
+    @font-face {
+        font-family: 'NG';
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot);
+        src: url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+             url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff2) format('woff2'),
+             url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff) format('woff'),
+             url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.ttf) format('truetype');
+    }
+    /*시작*/
+    .wrap {
+        padding: 100px;
+        background: #eee;
+    }
+    /*form_unit_01*/    
+    .form_unit_01 {
+        padding: 2px 0;
+        width: 100%;
+        display: table;
+        min-width: 400px;
+        border: 1px dotted red;
+    }
+    .form_unit_01 > label {
+        background: #ccc;
+        margin-right: 5px;
+        padding: 0 5px;
+        max-width: 100px;
+        display: table-cell;
+    }
+    .form_unit_01 > input {
+        width: 100%;
+        line-height: 32px;
+/*        padding: 0 5px;*/
+        display: table-cell;
+        box-sizing: border-box;
+    }
+    /*form_unit_02*/   
+    .form_unit_02 {
+        padding: 2px 0;
+        min-width: 300px;
+        padding-left: 100px;
+        border: 1px dotted red;
+    }
+    .form_unit_02 > label {
+        float: left;
+        background: #ccc;
+        min-width: 100px;
+        line-height: 32px;
+        margin-left: -100px;
+/*        padding: 0 5px;*/
+    }
+    .form_unit_02 > input {
+        width: 100%;
+        height: 32px;
+        line-height: 32px;
+/*        padding: 0 5px;*/
+        box-sizing: border-box;
+    }
+    /*form_unit_03*/ 
+    .form_unit_03 {
+        padding: 2px 0;
+        border: 1px dotted red;
+    }
+    .form_unit_03 > label { 
+        background: #ccc;
+        float: left; 
+        padding: 0 5px;
+        min-width: 100px;
+        height: 32px;
+        line-height: 32px;
+        box-sizing: border-box;
+    } 
+    .form_unit_03 > span {
+        display: block;
+        overflow: hidden;
+    } 
+    .form_unit_03 > span > input { 
+        padding: 0 5px;
+        width: 100%; 
+        height: 32px;
+        line-height: 32px;
+        box-sizing: border-box;
+    }
+    /*form_unit_04*/ 
+    .form_unit_04 {
+        padding: 2px 0;
+        border: 1px dotted red;
+    }
+    .form_unit_04 > label { 
+        background: #ccc;
+        float: left; 
+        padding: 0 5px;
+        min-width: 100px;
+        height: 32px;
+        line-height: 32px;
+        box-sizing: border-box;
+    } 
+    .form_unit_04 > span {
+        display: block;
+        overflow: hidden;
+    } 
+    .form_unit_04 > span > input { 
+        padding: 0 5px;
+        width: 100%; 
+        height: 32px;
+        line-height: 32px;
+        box-sizing: border-box;
+    }
+    .form_unit_04 > button { 
+        float: right;
+        padding: 0 25px;
+        height: 32px;
+        line-height: 32px;
+    }
+    /*form_unit_05*/ 
+    .form_unit_05 {
+        padding: 2px 0;
+        border: 1px dotted red;
+    }
+    .form_unit_05 > label { 
+        background: #ccc;
+        float: left; 
+        padding: 0 5px;
+        min-width: 100px;
+        height: 32px;
+        line-height: 32px;
+        box-sizing: border-box;
+    } 
+    .form_unit_05 > span {
+        display: block;
+        overflow: hidden;
+    } 
+    .form_unit_05 > span > input {  
+        padding: 0 5px;
+        margin: 0 5px;
+        height: 32px;
+        line-height: 32px;
+        vertical-align: middle;
+        box-sizing: border-box;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <fieldset>
+            <div class="form_unit_01">
+                <label for="input_1">레이블</label>
+                <input id="input_1" type="text" placeholder="텍스트 입력" required/>
+            </div> 
+            <div class="form_unit_02">
+                <label for="input_2">레이블</label>
+                <input id="input_2" type="text" placeholder="텍스트 입력" required/>
+            </div>
+            <div class="form_unit_03">
+                <label for="input_3">레이블</label>
+                <span><input id="input_3" type="text" placeholder="텍스트 입력" required/></span>
+            </div>
+            <div class="form_unit_04">
+                <label for="input_4">레이블</label>
+                <button> 버튼</button>
+                <span><input id="input_4" type="text" placeholder="텍스트 입력" required/></span>
+            </div>
+            <div class="form_unit_05">
+                <label for="input_5">레이블</label>
+                <span><input id="input_5" type="radio">라디오버튼 1</input>
+                <input id="input_5" type="radio">라디오버튼 2</input>
+                <input id="input_5" type="radio">라디오버튼 3</input></span>
+            </div>
+        </fieldset>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
