@@ -19,7 +19,7 @@
     <div id="totop" class="wrap">
         <header class="main_header">
             <label class="toggleBtn_content_lnb" for="toggleBtn_content_lnb">콘텐츠 메뉴</label>
-            <h1>현대백화점</h1>
+            <h1>현대백화점 판교점 통합 CMS</h1>
         </header>
         <nav class="main_gnb">
             <h2 class="noheader">메인 메뉴</h2>
@@ -33,28 +33,134 @@
         <div class="main_wrap">
             <div class="content_wrap">
                 <input id="toggleBtn_content_lnb" class="hidden" type="checkbox"/>
-                <nav class="content_lnb">
+                <nav id="content_lnb" class="content_lnb">
                     <h2 class="noheader">계정 관리</h2>
                     <ul>
-                        <li><a href="#">목록</a></li>
-                        <li><a href="#">로그 조회</a></li> 
+                        <li><a href="#menu01">조회</a></li>
+                        <li><a href="#menu02">등록</a></li>
+                        <li><a href="#menu03">로그 조회</a></li> 
                     </ul>
                 </nav>
                 <div class="content_group">
-                    <section class="content_section">
+                    <section id="menu01" class="content_section active">
                         <header class="content_header"> 
-                            <h3>목록</h3>
+                            <h3>조회</h3>
                         </header>
                         <div class="content_body">
-                            <p>목록</p>
+                            <div class="form_unit">
+                                <label for="input_id_search">아이디</label>
+                                <span><input id="input_id_search" type="text" placeholder="아이디 입력" required/></span>
+                            </div>
+                            <div class="form_unit">
+                                <label for="input_site_search">지점</label> 
+                                <select id="input_site_search">
+                                    <option>지점 선택</option>
+                                    <option>지점 1</option>
+                                    <option>지점 2</option>
+                                    <option>지점 3</option>
+                                </select>
+                            </div> 
+                            <div class="form_unit">
+                                <label for="input_authority_search">권한</label>      
+                                <select id="input_authority_search">
+                                    <option>권한 선택</option>
+                                    <option>레벨 1</option>
+                                    <option>레벨 2</option>
+                                    <option>레벨 3</option>
+                                </select>
+                            </div>
+                            <div class="form_unit">
+                                <button type="submit">조회</button>
+                            </div>
+                            <ol class="form_list">
+                                <li>
+                                    <span>1</span><span>charles</span><span>지점 1</span><span>레벨 1</span>
+                                    <span>등록일</span><span>수정일</span><span>수정아이디</span><span>사용여부</span>
+                                </li>
+                                <li>
+                                    <span>2</span><span>shine10e</span><span>지점 1</span><span>레벨 1</span>
+                                    <span>등록일</span><span>수정일</span><span>수정아이디</span><span>사용여부</span>
+                                </li>
+                                <li>
+                                    <span>3</span><span>gofogo</span><span>지점 1</span><span>레벨 1</span>
+                                    <span>등록일</span><span>수정일</span><span>수정아이디</span><span>사용여부</span>
+                                </li>
+                            </ol>
                         </div>
                     </section> 
-                    <section class="content_section">
+                    <section id="menu02" class="content_section">
+                        <header class="content_header"> 
+                            <h3>등록 / 수정</h3>
+                        </header>
+                        <div class="content_body">
+                            <div class="form_unit">
+                                <label for="input_id">아이디</label>
+                                <span><input id="input_id" type="text" placeholder="아이디 입력" required/></span>
+                            </div>
+                            <div class="form_unit">
+                                <label for="input_password">패스워드</label>
+                                <span><input id="input_password" type="password" placeholder="패스워드 입력" required/></span>
+                            </div>
+                            <div class="form_unit">
+                                <label for="input_password_confirm">패스워드 확인</label>
+                                <span><input id="input_password_confirm" type="password" placeholder="패스워드 확인" required/></span>
+                            </div>
+                            <div class="form_unit">
+                                <label for="input_authority">권한</label>      
+                                <select id="input_authority">
+                                    <option>권한 선택</option>
+                                    <option>레벨 1</option>
+                                    <option>레벨 2</option>
+                                    <option>레벨 3</option>
+                                </select>
+                            </div>
+                            <div class="form_unit">
+                                <label for="input_site">지점</label> 
+                                <select id="input_site">
+                                    <option>지점 선택</option>
+                                    <option>지점 1</option>
+                                    <option>지점 2</option>
+                                    <option>지점 3</option>
+                                </select>
+                            </div>
+                            <div class="form_unit">
+                                <button type="submit">등록</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="menu03" class="content_section">
                         <header class="content_header"> 
                             <h3>로그 조회</h3>
                         </header>
                         <div class="content_body">
-                            <p>로그 조회</p>
+                            <div class="form_unit">
+                                <label for="input_id_id_log">아이디</label>
+                                <span><input id="input_id_id_log" type="text" placeholder="아이디 입력" required/></span>
+                            </div>
+                            <div class="form_unit">
+                                <button type="submit">조회</button>
+                            </div>
+                            <ol class="form_list">
+                                <li>
+                                    <span>1</span><span>charles</span><span>지점 1</span><span>레벨 1</span>
+                                    <span>로그 시간</span><span>로그 타입</span>
+                                </li>
+                                <li>
+                                    <span>2</span><span>shine10e</span><span>지점 1</span><span>레벨 1</span>
+                                    <span>로그 시간</span><span>로그 타입</span>
+                                </li>
+                                <li>
+                                    <span>3</span><span>gofogo</span><span>지점 1</span><span>레벨 1</span>
+                                    <span>로그 시간</span><span>로그 타입</span>
+                                </li>
+                            </ol>
+<!--
+                            <div class="form_unit">
+                                <label for="input_4">레이블</label>
+                                <button> 버튼</button>
+                                <span><input id="input_4" type="text" placeholder="텍스트 입력" required/></span>
+                            </div>
+-->
                         </div>
                     </section>
                 </div>
