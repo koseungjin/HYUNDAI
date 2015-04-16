@@ -273,6 +273,9 @@ a {
     .main_header > .toggleBtn_content_lnb {
         top: 12px;
     }
+    .content_wrap {
+        padding-right: 200px;
+    }
     .content_wrap > .content_lnb {
         float:left; 
         width: 200px;
