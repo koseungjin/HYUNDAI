@@ -27,6 +27,11 @@ a {
         url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.ttf) format('truetype');
 }
 /*특수*/
+.clerabox:after {
+    content: "";
+    display: block;
+    clear: both;
+}
 .hidden {
     display: none;
 }
@@ -155,11 +160,6 @@ a {
 .main_wrap > .content_wrap {
     border: 1px solid lime;
 }
-.main_wrap > .content_wrap:after {
-    content: "";
-    display: block;
-    clear: both;
-}
 .content_group {
     float: left;
     margin-right: -200px;
@@ -176,11 +176,11 @@ a {
 .active {
     display: block;
 }
-.content_section > .content_header { 
+.content_section .content_header { 
     padding: 15px; 
     color: #0a9882;
 }
-.content_section > .content_body { 
+.content_section .content_body { 
     padding: 15px;  
     color: #231f20;
 }
@@ -221,6 +221,8 @@ a {
     box-sizing: border-box;
 }
 .form_unit > select { 
+    width: 100%;
+    max-width: 200px;
     height: 32px;
     padding: 0 5px;
 }
@@ -240,22 +242,43 @@ a {
 /*리스트 - 폼*/
 .form_list {
     margin-top: 10px;
-    border: 1px solid #eee;
+    border: 1px solid #ddd;
     font-size: 12px;
 /*    padding: 5px;*/
 } 
 .form_list > li {
-    border-bottom: 1px solid #eee;
+    margin-top: 1px;
+    border-bottom: 1px solid #ddd;
 }
 .form_list > li:last-child {
-    border-bottom: 0px solid #eee;
+    border-bottom: 0px solid #ddd;
+}
+.form_list > li > span:first-child {
+    width: 15px;
+    padding-left: 10px;
+    padding-right: 15px;
+    text-overflow: clip;
 }
 .form_list > li > span {
     display: inline-block;
-/*    float: left;*/
-    padding: 5px;
-/*    margin-bottom: 5px;*/
+    padding-left: 10px;
+    padding-right: 15px;
+    width: 75px;
+    max-width: 75px;
+    border-right: 1px solid #ddd;
+    height: 28px;
+    line-height: 29px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+.form_list > li > button {
+    width: 50px;
+    margin-top: 4px;
+    margin-right: 5px;
+    height: 22px;
+    vertical-align: top;
+} 
 /*
 .form_unit > button[type="submit"] { 
     
