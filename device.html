@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--<mata name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1,maximum-scale=2, user-scalable=no">-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+    <title>디바이스 - 현대백화점 판교점 통합 CMS</title>
+    <link rel="stylesheet" type="text/css" href="default.css">
+    <style>
+        
+    </style>
+</head>
+<body class="body" onload="showWindowSize();" onresize="showWindowSize();">
+    <!--태스트-->
+    <p>윈도우 사이즈</p>
+    <div class="gototop"><a href="#totop">최상으로</a></div>
+    <!--시작-->
+    <div id="totop" class="wrap">
+        <header class="main_header">
+            <label class="toggleBtn_content_lnb" for="toggleBtn_content_lnb">콘텐츠 메뉴</label>
+            <h1>현대백화점 판교점 통합 CMS</h1>
+        </header>
+        <nav class="main_gnb">
+            <h2 class="noheader">메인 메뉴</h2>
+            <ul>
+                <li><a href="#">콘텐츠</a></li>
+                <li><a href="#">클라이언트</a></li>
+                <li><a href="device.html" class="active">디바이스</a></li>
+                <li><a href="media.html">미디어</a></li>
+                <li><a href="index.html">계정</a></li>
+            </ul>
+        </nav>
+        <div class="main_wrap">
+            <div class="content_wrap clerabox">
+                <input id="toggleBtn_content_lnb" class="hidden" type="checkbox"/>
+                <nav id="content_lnb" class="content_lnb">
+                    <h2 class="noheader">디바이스 관리</h2>
+                    <ul>
+                        <li><a href="#menu01">모니터링</a></li>
+                        <li><a href="#menu02">등록 / 수정</a></li>
+                        <li><a href="#menu03">로그 조회</a></li>
+                        <li><a href="#menu04">전원 관리</a></li> 
+                    </ul>
+                </nav>
+                <div class="content_group">
+                    <section id="menu01" class="content_section active">
+                        <header class="content_header"> 
+                            <h3>모니터링</h3>
+                        </header>
+                        <div class="content_body">
+                            모니터링
+                        </div>
+                    </section> 
+                    <section id="menu02" class="content_section">
+                        <header class="content_header"> 
+                            <h3>등록 / 수정</h3>
+                        </header>
+                        <div class="content_body">
+                            <div class="form_unit">
+                                <label for="input_name">이름</label>
+                                <span><input id="input_name" type="text" placeholder="이름 입력" required/></span>
+                            </div>
+                            <div class="form_unit">
+                                <label for="input_ip">IP 주소</label>
+                                <span><input id="input_ip" type="text" placeholder="192.168.0.1" required/></span>
+                            </div>
+                            <div class="form_unit">
+                                <label for="input_mac">MAC 주소</label>
+                                <span><input id="input_mac" type="text" placeholder="255.255.255.255" required/></span>
+                            </div>
+                            <div class="form_unit">
+                                <label for="input_location">위치</label>
+                                <span><input id="input_location" type="text" placeholder="위치 입력" required/></span>
+                            </div>
+                            <div class="form_unit">
+                                <label for="input_description">비고</label>
+                                <span><input id="input_description" type="text" placeholder="비고 입력" required/></span>
+                            </div>
+                            <div class="form_unit">
+                                <label for="input_installdate">설치일</label>
+                                <span><input id="input_installdate" type="text" placeholder="2015.12.24" required/></span>
+                            </div>
+                            <div class="form_unit">
+                                <button type="submit">등록</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="menu03" class="content_section">
+                        <header class="content_header"> 
+                            <h3>로그 조회</h3>
+                        </header>
+                        <div class="content_body">
+                            <ol class="form_list">
+                                <li>
+                                    <span></span><span>이름</span>
+                                    <span class="address">IP 주소</span><span class="address">MAC 주소</span>
+                                    <span>위치</span><span>비고</span><span class="date">설치일</span>
+                                </li>
+                                <li>
+                                    <span>1</span><span>HD_01</span>
+                                    <span class="address">192.168.192.168</span><span class="address">255.255.255.255</span>
+                                    <span>위치 1</span><span>비고 1</span><span class="date">2014.05.05</span>
+                                    <button>수정</button><button>삭제</button>
+                                </li>
+                                <li>
+                                    <span>2</span><span>HD_02</span>
+                                    <span class="address">192.168.0.1</span><span class="address">255.255.255.255</span>
+                                    <span>위치 1</span><span>비고 1</span><span class="date">2014.05.05</span>
+                                    <button>수정</button><button>삭제</button>
+                                </li>
+                                <li>
+                                    <span>3</span><span>HD_03</span>
+                                    <span class="address">192.168.0.1</span><span class="address">255.255.255.255</span>
+                                    <span>위치 1</span><span>비고 1</span><span class="date">2014.05.05</span>
+                                    <button>수정</button><button>삭제</button>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                    <section id="menu04" class="content_section">
+                        <header class="content_header"> 
+                            <h3>전원 관리</h3>
+                        </header>
+                        <div class="content_body">
+                            <ol class="form_list">
+                                <li>
+                                    <span></span><span>이름</span><span>위치</span><span>비고</span>
+                                    <span class="date">설치일</span>
+                                </li>
+                                <li>
+                                    <span>1</span><span>HD_01</span><span>위치 1</span><span>비고 1</span>
+                                    <span class="date">2014.05.05</span>
+                                    <button>켜기</button><button>끄기</button><button>재부팅</button>
+                                </li>
+                                <li>
+                                    <span>2</span><span>HD_02</span><span>위치 1</span><span>비고 1</span>
+                                    <span class="date">2014.05.05</span>
+                                    <button>켜기</button><button>끄기</button><button>재부팅</button>
+                                </li>
+                                <li>
+                                    <span>3</span><span>HD_03</span><span>위치 1</span><span>비고 1</span>
+                                    <span class="date">2014.05.05</span>
+                                    <button>켜기</button><button>끄기</button><button>재부팅</button>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <footer class="main_footer">
+            <h4>COPYRIGHTⓒ HYUNDAI DEPARTMENT STORE GROUP Co. Ltd. ALL RIGHTS RESERVED.</h4>
+        </footer>
+    </div>
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="default.js"></script>
+</body>
+</html>
