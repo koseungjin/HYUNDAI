@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--<mata name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1,maximum-scale=2, user-scalable=no">-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+    <title>미디어 - 현대백화점 판교점 통합 CMS</title>
+    <link rel="stylesheet" type="text/css" href="default.css">
+    <style>
+        
+    </style>
+</head>
+<body class="body" onload="showWindowSize();" onresize="showWindowSize();">
+    <!--태스트-->
+    <p>윈도우 사이즈</p>
+    <div class="gototop"><a href="#totop">최상으로</a></div>
+    <!--시작-->
+    <div id="totop" class="wrap">
+        <header class="main_header">
+            <label class="toggleBtn_content_lnb" for="toggleBtn_content_lnb">콘텐츠 메뉴</label>
+            <h1>현대백화점 판교점 통합 CMS</h1>
+        </header>
+        <nav class="main_gnb">
+            <h2 class="noheader">메인 메뉴</h2>
+            <ul>
+                <li><a href="#">콘텐츠</a></li>
+                <li><a href="#">클라이언트</a></li>
+                <li><a href="device.html">디바이스</a></li>
+                <li><a href="media.html" class="active">미디어</a></li>
+                <li><a href="index.html">계정</a></li>
+            </ul>
+        </nav>
+        <div class="main_wrap">
+            <div class="content_wrap clerabox">
+                <input id="toggleBtn_content_lnb" class="hidden" type="checkbox"/>
+                <nav id="content_lnb" class="content_lnb">
+                    <h2 class="noheader">미디어 관리</h2>
+                    <ul>
+                        <li><a href="#menu01">미디어 등록</a></li>
+                        <li><a href="#menu02">미디어 그룹 등록</a></li>
+                        <li><a href="#menu03">미디어 디바이스 등록</a></li>
+                    </ul>
+                </nav>
+                <div class="content_group">
+                    <section id="menu01" class="content_section active">
+                        <header class="content_header"> 
+                            <h3>미디어 등록</h3>
+                        </header>
+                        <div class="content_body">
+                            <div class="form_unit">
+                                <label for="input_medianame">미디어 이름</label>
+                                <span><input id="input_medianame" type="text" placeholder="이름 입력" required/></span>
+                            </div>
+                            <div class="form_unit">
+                                <label for="input_mediaid">미디어 ID</label>
+                                <span><input id="input_mediaid" type="text" placeholder="아이디(숫자) 입력" required/></span>
+                            </div>
+                            <div class="form_unit">
+                                <button type="submit">등록</button>
+                            </div>
+                        </div>
+                    </section> 
+                    <section id="menu02" class="content_section">
+                        <header class="content_header"> 
+                            <h3>미디어 그룹 등록</h3>
+                        </header>
+                        <div class="content_body">
+                            <div class="form_unit">
+                                <label for="input_mediagroupname">그룹명</label>
+                                <span><input id="input_mediagroupname" type="text" placeholder="그룹명 입력" required/></span>
+                            </div>
+                            <div class="form_unit">
+                                <label for="select_site">지점</label>      
+                                <select id="select_site">
+                                    <option>지점 선택</option>
+                                    <option>지점 1</option>
+                                    <option>지점 2</option>
+                                    <option>지점 3</option>
+                                </select>
+                            </div>
+                            <div class="form_unit">
+                                <label for="input_mediagroupnumber">그룹 번호</label>
+                                <span><input id="input_mediagroupnumber" type="text" placeholder="그룹 번호 입력" required/></span>
+                            </div>
+                            <ul class="mediagroup_list">
+                                <div class="form_unit wide">
+                                    <label for="select_media">미디어 1번</label>      
+                                    <select id="select_media">
+                                        <option>미디어 선택</option>
+                                        <option>미디어 1</option>
+                                        <option>미디어 2</option>
+                                        <option>미디어 3</option>
+                                    </select>
+                                    <button id="add_media">추가</button>
+                                    <button id="remove_media">삭제</button>
+                                </div>
+                            </ul>
+                            <div class="form_unit">
+                                <button type="submit">등록</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="menu03" class="content_section">
+                        <header class="content_header"> 
+                            <h3>미디어 디바이스 등록</h3>
+                        </header>
+                        <div class="content_body">
+                            <ol class="form_list">
+                                <li>
+                                    <span></span><span class="long">그룹명</span><span class="select">위치번호</span>
+                                    <span>미디어</span><span class="select">디바이스</span>
+                                </li>
+                                <li>
+                                    <span>1</span><span class="long">미디어 그룹 01</span><span class="select"><select>
+                                        <option>위치 선택</option>
+                                        <option>위치 1</option>
+                                        <option>위치 2</option>
+                                        </select></span>
+                                    <span>미디어 01</span><span class="select" id="select_device_01"><select>
+                                        <option>디바이스 선택</option>
+                                        <option>디바이스 1</option>
+                                        <option>디바이스 2</option>
+                                        <option>디바이스 3</option>
+                                        </select></span>
+                                </li>
+                                <li>
+                                    <span>2</span><span class="long"></span><span class="select"></span>
+                                    <span>미디어 02</span><span class="select" id="select_device_02"><select>
+                                        <option>디바이스 선택</option>
+                                        <option>디바이스 1</option>
+                                        <option>디바이스 2</option>
+                                        <option>디바이스 3</option>
+                                        </select></span>
+                                </li>
+                                <li>
+                                    <span>3</span><span class="long"></span><span class="select"></span>
+                                    <span>미디어 03</span><span class="select" id="select_device_03"><select>
+                                        <option>디바이스 선택</option>
+                                        <option>디바이스 1</option>
+                                        <option>디바이스 2</option>
+                                        <option>디바이스 3</option>
+                                        </select></span>
+                                </li>
+                                <li>
+                                    <span>4</span><span class="long">미디어 그룹 02</span><span class="select"><select>
+                                    <option>위치 선택</option>
+                                    <option>위치 1</option>
+                                    <option>위치 2</option>
+                                    </select></span>
+                                    <span>미디어 01</span><span class="select" id="select_device_04"><select>
+                                        <option>디바이스 선택</option>
+                                        <option>디바이스 4</option>
+                                        <option>디바이스 5</option>
+                                        </select></span>
+                                </li>
+                                <li>
+                                    <span>5</span><span class="long"></span><span class="select"></span>
+                                    <span>미디어 02</span><span class="select" id="select_device_05"><select>
+                                        <option>디바이스 선택</option>
+                                        <option>디바이스 4</option>
+                                        <option>디바이스 5</option>
+                                        </select></span>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="form_unit">
+                            <button type="submit">적용</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <footer class="main_footer">
+            <h4>COPYRIGHTⓒ HYUNDAI DEPARTMENT STORE GROUP Co. Ltd. ALL RIGHTS RESERVED.</h4>
+        </footer>
+    </div>
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="default.js"></script>
+</body>
+</html>
