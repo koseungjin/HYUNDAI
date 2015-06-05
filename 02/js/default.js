@@ -1,62 +1,115 @@
-var viewporinfo = document.querySelector('.body > p');
-var viewportwidth;
-var viewportheight;
-
-function showWindowSize() {
-    if (typeof window.innerWidth != 'undefined')
-    {
-         viewportwidth = window.innerWidth,
-         viewportheight = window.innerHeight;
+$(function() {  	
+    
+    /*현재 윈도우사이즈 실시간보기*/
+    var $window = $(window),
+        $viewportInfo = $('#body > p'),
+        viewportWidth, viewportHeight;
+    
+    function showWindowSize() {
+        if (typeof window.innerWidth != 'undefined' || 
+            typeof window.innerHeight != 'undefined') {
+            viewportWidth = window.innerWidth;
+            viewportHeight = window.innerHeight;
+        }  
+        $viewportInfo.text(viewportWidth + ' x ' + viewportHeight);
     }
 
-    viewporinfo.innerHTML = viewportwidth + ' * ' + viewportheight;
-}
-
-$(document).ready(function(){  	
-    
-    $(".gnb li").on("click", function(event){
-        
-        event.preventDefault();
-
-        $(".gnb li").removeClass();
-        $(this).addClass("on");
-
-        var $index = $(this).index();
-        $(".lnb > ul > li").removeClass();
-        $(".lnb > ul > li").eq($index).addClass("on");
-        
+    $window.on({
+        load : showWindowSize,
+        resize : showWindowSize
     });
     
+    var $toggleGnb = $('.toggle-lnb'),
+        $gnb = $('.gnb'), $lnb = $('.lnb'),
+        $wrap = $('.wrap'), $pageContainer = $('.page-container');
+    
+    /*토글 서브메뉴*/
+    $toggleGnb.on('click', function(event) {
+        event.preventDefault();
+        
+        $lnb.toggleClass('on');
+        
+        if (viewportWidth >= 1025) {
+            if ($lnb.hasClass('on')) {
+                $wrap.css({
+                    paddingRight: '200px'
+                });
+            }
+            else {
+                $wrap.css({
+                    paddingRight: '0px'
+                });
+            }
+        }
+    });
+
+    /*메인메뉴*/
+    $gnb.find('li').on('click', function(event) {
+        event.preventDefault();
+        
+        $(this).addClass('on')
+            .siblings().removeClass('on');
+        
+        // 서브메뉴 활성화
+        var $indexGnb = $(this).index();
+        $lnb.find('ul').removeClass()
+            .eq($indexGnb).addClass('on');
+        
+        // 서브메뉴 초기화
+        $lnb.find('ul[class="on"] > li:first-child')
+            .addClass('on')
+            .siblings().removeClass('on');
+        
+        updateSection(0);
+        updatePageIndicator();
+    });
+    
+    /*서브메뉴*/
+    $lnb.find('li').on('click', function(event) {
+        event.preventDefault();
+        
+        $(this).addClass('on')
+            .siblings().removeClass('on');
+        
+        // 섹션(페이지) 활성화        
+        updateSection($(this).index());
+        updatePageIndicator();
+    });
+    
+    /*섹션(페이지) 업데이트*/
+    function updateSection(index) { 
+        $pageContainer.find('section').removeClass()
+            .eq(index).addClass('on');
+    }
+
+    /*페이지 인디케이터 업데이트*/
+    var gbnText, lnbText;
+    var $pageIndicator = $('.page-indicator');
+
+    function updatePageIndicator() {
+        gbnText = $gnb.find('li[class="on"] > a').text();
+        lnbText = $lnb.find('ul[class="on"] > li[class="on"] > a').text();
+        
+        $pageIndicator.text(gbnText + ' > ' + lnbText);
+    }
 });
 
-jQuery(function($){
-    /*메인 메뉴*/
-    /*var $mainGnb = $(".main_gnb ul>li>a");
-    $mainGnb.on("click", function(event){
-        $(this).addClass("active")
-            .parent("li").siblings().children("a")
-                .removeClass("active");
-    });*/
-    /*콘텐츠 메뉴*/
-    /*$('#content_lnb').on('click', 'li a', function(event){
-        var $this = $(this);
-        $($this.attr('href'))
-                .addClass('active')
-            .siblings()
-                .removeClass('active'); 
-    });*/
-    /*기본 동작 무시*/
-    /*$('.content_lnb a').on('click', function(event){
-        event.preventDefault();
-    });*/
-    /*미디어 그룹에 미디어 추가/삭제*/
-    /*$('.form_unit > #add_media').on('click', function(event){
-        console.log('add');
-        var $test = $('.form_unit > #add_media').parent().clone();
-        $test.appendTo('.mediagroup_list');
-    });
-    $('.form_unit > #remove_media').on('click', function(event){
-        console.log('remove');
-        $(this).parent().remove();
-    });*/
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

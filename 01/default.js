@@ -1,15 +1,15 @@
-var viewporinfo = document.querySelector('.body > p');
-var viewportwidth;
-var viewportheight;
+var viewporInfo = document.querySelector('.body > p');
+var viewportWidth;
+var viewportHeight;
 
 function showWindowSize() {
     if (typeof window.innerWidth != 'undefined')
     {
-         viewportwidth = window.innerWidth,
-         viewportheight = window.innerHeight;
+         viewportWidth = window.innerWidth,
+         viewportHeight = window.innerHeight;
     }
 
-    viewporinfo.innerHTML = viewportwidth + ' * ' + viewportheight;
+    viewporInfo.innerHTML = viewportWidth + ' * ' + viewportHeight;
 }
 
 jQuery(function($){
