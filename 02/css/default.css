@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url(http://fonts.googleapis.com/css?family=Orbitron); 
+/*@import url(http://fonts.googleapis.com/css?family=Orbitron);*/
 @font-face {
     font-family: 'NG';
     font-style: normal;
@@ -11,15 +11,15 @@
         url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.ttf) format('truetype');
 }
 
-/* Reset CSS */
+/*리셋*/
 * { margin: 0;  padding: 0; }
-ol,ul { list-style: none; overflow: visible; }
+ol, ul { list-style: none; overflow: visible; }
 a { outline: 0; text-decoration: none; color: #555; }
-img { border: 0; }
+img { border: 0; vertical-align: top; }
 li { list-style: none; }
 html, body { 
-    /*height: 100%;*/ 
-    background: #4a4a4a; 
+    height: 100%; 
+    background: #fff; 
 }
 body { 
     width: 100%;  
@@ -28,12 +28,7 @@ body {
     font-size: 12px; 
 }
 
-/* Common */
-.clearbox:after {
-    content: "";
-    display: block;
-    clear: both;
-}
+/*공통*/ 
 .unvisible {
     visibility: hidden;
     height: 0px;
@@ -43,29 +38,36 @@ body {
     left: 5px;
     bottom: 5px; 
     border: 1px solid red;
-    z-index: 10;
+    color: red;
+    padding: 5px 10px;
+    z-index: 100;
+}
+.clearbox:after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
-/*toggle-lnb*/
+/*토글 서브메뉴*/
 .toggle-lnb {
     position: absolute;
     width: 32px;
-    height: 4px;
-    margin-top: -15px;
+    height: 5px;
+    border-top: 13px double #0a9882;
+    border-bottom: 13px double #0a9882;
+    cursor: pointer;
     left: 20px;
     top: 50%;
-    border-top: 12px double #0a9882;
-    border-bottom: 12px double #0a9882;
-    cursor: pointer;
+    margin-top: -15px;
 }
 .toggle-lnb:hover {
-    border-top: 12px double #da9529;
-    border-bottom: 12px double #da9529;
+    border-top-color: #da9529;
+    border-bottom-color: #da9529;
 }
 
-/*main-header*/
+/*메인헤더*/
 .main-header {
-    position: fixed;
+    position: relative;
     width: 100%;
     height: 45px;
     background: #303030;
@@ -75,31 +77,36 @@ body {
 .main-header h1 {
     background: url(../img/logo_small.jpg) no-repeat 0px 0px;
     background-size: contain;
-    text-indent: -9999px; /*텍스트숨김*/
+    text-indent: -9999px;
     position: absolute;
     width: 112px;
     height: 31px;
-    margin-left: -56px;
-    margin-top: -15px;
     left: 50%;
     top: 50%;
+    margin-left: -56px;
+    margin-top: -15px;
 }
-
-/*gnb*/
+.page-indicator {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -6px;
+    color: #fff;
+    font-size: 12px;
+}
+/*메인메뉴*/
 .gnb {
-    position: fixed;
+    position: relative;
     width: 100%;
-    margin-top: 45px;
     border-top: 1px solid #191919;
     border-bottom: 1px solid #1f1f1f;
     background: #3b3b3b;
     height: 32px;
-    z-index: 1;
+    z-index: 2;
 }
 .gnb li {
     float: left;
-    width: 33.2222%;
-    color: #fff;
+    width: 24.8888%;
     border-right: 1px solid #575757;
 }
 .gnb li:last-child {
@@ -114,83 +121,78 @@ body {
     padding-top: 8px;
     box-sizing: border-box;
 }
-.gnb li.on a {
-    background: #2d2d2d;
-    color: #fff;
-}
-.gnb li:hover a {
-    background: #3f3f3f;
-}
-.gnb li a {
-    background: #3b3b3b;
-    color: #f0f0f0;
-}
-.gnb li.on a {
-    color: #fff;
-}
-
-/*lnb*/
-.lnb {
-    position: fixed;
-    width: 100%;
-    margin-top: 79px;
-    z-index: 1;
-}
-.lnb > ul > li {
-    display: none;
-}
-.lnb > ul > li > ul > li {
-    border-bottom: 1px solid #aaa; 
-}
-.lnb > ul > li.on {
-    display: block;
-}
-.lnb > ul > li > ul > li:hover a {
-    background: #4f4f4f;
-    color: #fff;
-}
-.lnb a {
-    background: #4a4a4a;
+.gnb a {
+    background: #363636;
     color: #afafaf;
 }
-
-/*page-indicator*/
-.page-indicator {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    margin-top: -6px;
+.gnb li.on a {
+    background: #2d2d2d;
+}
+.gnb li:hover a,
+.gnb li.on a {
     color: #fff;
 }
-.page-indicator li {
-    float: left;
+
+.wrap {
+    width: 100%;
+}
+/*서브메뉴*/
+.lnb {
+    position: relative;
+    background: #4a4a4a;
+    width: 100%;
+    z-index: 3;
+    display: none;
+}
+.lnb.on {
+    display: block;
+}
+.lnb > ul > li {
+    border-bottom: 1px solid #6f6f6f; 
+}
+.lnb > ul {
+    display: none;
+}
+.lnb > ul.on {
+    display: block;
+}
+.lnb a {
+    background: #3f3f3f;
+    color: #afafaf;
+}
+.lnb li:hover a, 
+.lnb li.on a {
+    color: #fff;
 }
 
-/*page*/
+/*섹션(페이지)*/
 .page-container {
-    position: absolute;
+    position: relative;
     width: 100%;
-    min-height: 500px;
     background: #fff;
-    margin-top: 244px;
-    z-index: 0;
-/*    border: 1px solid red;*/
+    z-index: 4;
 } 
 section {
-    background: #fff;
-    height: 500px;
+    min-height: 500px;
     display: none;
 }
 section.on {
     display: block;
 }
+div.page {
+    height: 1000px;
+    padding: 20px;
+}
+div.page h3 {
+    font-size: 18px;
+}
 
-/*main-footer */
+/*메인푸터*/
 .main-footer span {
     
 }
 
-/* Responsible */
+/*반응형*/
 @media (min-width: 768px) {
     
 }
@@ -198,58 +200,66 @@ section.on {
     .main-header {
         height: 60px;
     } 
-    .gnb {
-        margin-top: 60px;
-    }
-    .lnb {
-        margin-top: 95px;
-    }
 }
 @media (min-width: 1025px) {
+    html, body {
+        overflow: hidden;
+    }
     .toggle-lnb {
-        display: none;
+        left: 15px;
     }
     .main-header {
         height: 100px;
-        position: relative;
+/*        position: relative;*/
     } 
     .main-header h1 {
-        margin-left: 0;
+        margin-left: 45px;
         margin-top: -15px;
         left: 20px;
         top: 50%;
     }
     .gnb {
+/*
         position: relative;
-        margin-top: 0;
+        top: 100px;
+*/
     }
     .gnb li {
-        width: 110px;
+        width: 100px;
+        box-sizing: border-box;
     }   
     .gnb li:last-child {
         border-right: 1px solid #575757;
     }
     .wrap {
         padding-right: 200px;
+/*
+        position: relative;
+        top: 132px;
+*/
+        height: 100%;
+        overflow: hidden;
     }
     .lnb {
         position: relative;
         float: left;
         width: 200px;
-        margin-top: 0;
+        height: 1000px;
+    }
+    .lnb ul {
+/*        top: 0;*/
     }
     .lnb li a {
         text-align: left;
-        padding-left: 20px;
-    }
-    .page-indicator {
-        top: 77%;
+        padding-left: 15px;
     }
     .page-container { 
-        position: relative;
         float: left;
-        margin-top: 0;
-        margin-right: -202px;
+        position: relative;
+        margin-right: -200px;
+        overflow: scroll;
         width: 100%;
+        height: 100%;
+/*        width: 500px;*/
     }
 }
