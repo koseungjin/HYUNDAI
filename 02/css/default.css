@@ -13,12 +13,16 @@
 
 /*리셋*/
 * { margin: 0;  padding: 0; }
-ol, ul { list-style: none; overflow: visible; }
 a { outline: 0; text-decoration: none; color: #555; }
-img { border: 0; vertical-align: top; }
+ol, ul { list-style: none; overflow: visible; }
 li { list-style: none; }
+img { border: 0; vertical-align: top; }
+img, video {
+	max-width: 100%;
+	height: auto;
+}
 html, body { 
-    height: 100%; 
+	height: 100%;
     background: #fff; 
 }
 body { 
@@ -26,7 +30,7 @@ body {
     min-width: 760px;
     font-family: 'NG', 'Helvetica', sans-serif;
     font-size: 12px; 
-}
+} 
 
 /*공통*/ 
 .unvisible {
@@ -35,11 +39,11 @@ body {
 }
 #body > p {
     position: fixed;
-    left: 5px;
-    bottom: 5px; 
+    left: 15px;
+    bottom: 12px; 
     border: 1px solid red;
     color: red;
-    padding: 5px 10px;
+    padding: 5px 7px;
     z-index: 100;
 }
 .clearbox:after {
@@ -70,7 +74,8 @@ body {
     position: relative;
     width: 100%;
     height: 45px;
-    background: #303030;
+    /*background: #303030;*/ 
+	background: linear-gradient(#404040, #303030); 
     overflow: visible;
     z-index: 1;
 }
@@ -94,20 +99,24 @@ body {
     color: #fff;
     font-size: 12px;
 }
+
 /*메인메뉴*/
 .gnb {
     position: relative;
     width: 100%;
     border-top: 1px solid #191919;
     border-bottom: 1px solid #1f1f1f;
+    box-sizing: border-box;
     background: #3b3b3b;
-    height: 32px;
     z-index: 2;
 }
 .gnb li {
     float: left;
-    width: 24.8888%;
+    font-size: 14px;
+    text-align: center;
     border-right: 1px solid #575757;
+    box-sizing: border-box;
+    width: 24.9999%;
 }
 .gnb li:last-child {
     border-right: 0;
@@ -115,28 +124,27 @@ body {
 .gnb li a,
 .lnb li a {
     display: block;
-    height: 32px;
-    text-align: center;
-    font-size: 14px;
-    padding-top: 8px;
-    box-sizing: border-box;
 }
 .gnb a {
     background: #363636;
     color: #afafaf;
+    height: 32px;
+    line-height: 32px;
+    box-sizing: border-box;
 }
 .gnb li.on a {
     background: #2d2d2d;
 }
 .gnb li:hover a,
+.gnb li:focus a, 
 .gnb li.on a {
     color: #fff;
 }
 
-.wrap {
-    width: 100%;
-}
 /*서브메뉴*/
+.wrap {
+    overflow: hidden;
+}
 .lnb {
     position: relative;
     background: #4a4a4a;
@@ -147,8 +155,10 @@ body {
 .lnb.on {
     display: block;
 }
-.lnb > ul > li {
+.lnb li {
+    font-size: 12px;
     border-bottom: 1px solid #6f6f6f; 
+    box-sizing: border-box;
 }
 .lnb > ul {
     display: none;
@@ -159,8 +169,13 @@ body {
 .lnb a {
     background: #3f3f3f;
     color: #afafaf;
+    height: 26px;
+    line-height: 26px;
+    box-sizing: border-box;
+    padding-left: 20px;
 }
 .lnb li:hover a, 
+.lnb li:focus a, 
 .lnb li.on a {
     color: #fff;
 }
@@ -182,14 +197,27 @@ section.on {
 div.page {
     height: 1000px;
     padding: 20px;
+    /*border: 1px solid lime;*/
 }
 div.page h3 {
     font-size: 18px;
 }
 
 /*메인푸터*/
+.main-footer {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    /*background: #303030;*/ 
+	background: linear-gradient(#404040, #303030); 
+    border-top: 1px solid #191919;
+    box-sizing: border-box;
+    text-align: center;
+}
 .main-footer span {
-    
+    color: #fff;
+    z-index: 5;
 }
 
 /*반응형*/
@@ -210,7 +238,6 @@ div.page h3 {
     }
     .main-header {
         height: 100px;
-/*        position: relative;*/
     } 
     .main-header h1 {
         margin-left: 45px;
@@ -218,36 +245,27 @@ div.page h3 {
         left: 20px;
         top: 50%;
     }
-    .gnb {
-/*
-        position: relative;
-        top: 100px;
-*/
+    .page-indicator {
+        top: 58%;
     }
     .gnb li {
         width: 100px;
-        box-sizing: border-box;
     }   
     .gnb li:last-child {
         border-right: 1px solid #575757;
     }
     .wrap {
+        position: absolute;
+        top: 134px;
+        bottom: 50px;
+        left: 0;
+        right: 0;
         padding-right: 200px;
-/*
-        position: relative;
-        top: 132px;
-*/
-        height: 100%;
-        overflow: hidden;
     }
     .lnb {
-        position: relative;
         float: left;
         width: 200px;
-        height: 1000px;
-    }
-    .lnb ul {
-/*        top: 0;*/
+        height: 100%;
     }
     .lnb li a {
         text-align: left;
@@ -255,11 +273,13 @@ div.page h3 {
     }
     .page-container { 
         float: left;
-        position: relative;
         margin-right: -200px;
-        overflow: scroll;
-        width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
         height: 100%;
-/*        width: 500px;*/
+    }
+    .main-footer {
+        position: absolute;
+        bottom: 0;
     }
 }
