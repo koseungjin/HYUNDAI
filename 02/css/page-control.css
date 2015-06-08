@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+.pages-container div.page {
+    padding: 20px;
+    /*height: 1000px;*/
+    
+}
+.pages-container .page-header > h3 {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+/*    border: 1px solid red;*/
+    color: #555;
+}
+.pages-container .page-body {
+    margin-bottom: 15px;
+}
+
+/*폼 - 유닛*/
+.form-unit {
+    padding-bottom: 4px;
+    max-width: 300px;
+}
+.form-unit > label { 
+    float: left; 
+    min-width: 100px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+} 
+.form-unit span {
+    display: block;
+    overflow: hidden;
+    height: 26px;
+    line-height: 26px;
+    /*말줄임표*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} 
+.form-unit > span > input { 
+    padding: 1px 5px 0 5px;
+    box-sizing: border-box;
+    width: 100%; 
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+}
+.form-unit > button { 
+    height: 26px;
+    line-height: 26px;
+    position: relative;
+    left: 220px;
+    padding: 0 25px;
+    font-size: 12px;
+}
+
+/*폼 - 리스트*/
+.form-list {
+    border: 1px solid #ddd;
+    font-size: 12px;
+} 
+.form-list > li {
+    border-bottom: 1px solid #ddd;
+    height: 25px;
+    line-height: 26px;
+    box-sizing: border-box;
+}
+.form-list > li:first-child {
+    font-weight: bold;
+}
+.form-list > li:first-child > span:first-child {
+    text-indent: -9999px;
+}
+.form-list > li:last-child {
+    border-bottom: 0px solid #ddd;
+}
+
+/*폼 - 리스트 - 인덱스*/
+.form-list > li span {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+    width: 75px;
+    /*말줄임표*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.form-list > li span:first-child {
+    /*3자리 사용안함(ex. 100 이상)*/
+    width: 30px;
+    text-overflow: clip;
+} 
+.form-list > li span button {
+    width: 100%;
+    height: 21px;
+    font-size: 12px;
+    padding-top: 2px;
+/*    margin-top: 2px;*/
+} 
+
+/*허용 길이*/
+/*.form-list > li > span.short { 
+    width: 25px;
+}*/
+/*.form-list > li > span.middle { 
+    width: 75px;
+}*/
+.form-list > li > span.long { 
+    width: 125px;
+}
+.form-list > li > span.wide { 
+    width: 175px;
+}
+
+/*폼 - 셀렉트*/
+.form-unit select { 
+    padding: 1px 2px 0 2px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 26px;
+    max-width: 200px;
+    line-height: 26px;
+    font-size: 12px;
+}
+
+/*폼 - 리스트 - 셀렉트*/
+.form-list > li span select {
+    margin-top: 3px;
+    padding: 3px 0 2px 0;
+}
+.form-list > li span.select { 
+    width: 110px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.form-list > li span.select > select { 
+    width: inherit;
+}
+
+/*폼 - 셀렉트*/
+
+.form-unit > select ~ button { 
+    margin-top: 0;
+    left: 0;
+}
+.form-unit > select > option { 
+
+}
+
+
+
+
+
+
+
+
+

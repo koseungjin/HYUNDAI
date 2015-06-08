@@ -21,7 +21,7 @@ $(function() {
     
     var $toggleGnb = $('.toggle-lnb'),
         $gnb = $('.gnb'), $lnb = $('.lnb'),
-        $wrap = $('.wrap'), $pageContainer = $('.page-container');
+        $wrap = $('.wrap'), $pageContainer = $('.pages-container');
     
     /*토글 서브메뉴*/
     $toggleGnb.on('click', function(event) {
