@@ -26,12 +26,12 @@ img, video {
 html, body { 
 	height: 100%;
     background: #fff; 
+    font-size: 12px; 
 }
 body { 
     width: 100%;  
     min-width: 760px;
     font-family: 'NG', 'Helvetica', sans-serif;
-    font-size: 12px; 
 } 
 
 /*공통*/ 

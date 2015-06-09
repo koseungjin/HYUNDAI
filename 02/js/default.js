@@ -92,6 +92,21 @@ $(function() {
         
         $pageIndicator.text(gbnText + ' > ' + lnbText);
     }
+    
+    /*폼 - 탭 콘트롤*/
+    var $formTabMenu = $('.form-tab-menu'),
+        $formTabContent = $('.form-tab-content');
+    
+    $formTabMenu.find('li').on('click', function(event) {
+        event.preventDefault();
+
+        $(this).addClass('on')
+            .siblings().removeClass('on');
+        
+        $formTabContent.find('div').eq($(this).index()).addClass('on')
+            .siblings().removeClass('on');
+        
+    });
 });
 
 

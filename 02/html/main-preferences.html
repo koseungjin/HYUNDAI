@@ -119,7 +119,7 @@
                             </ol>
                         </div>
                         <header class="page-header"> 
-                            <h3>미디어 등록</h3>
+                            <h3>미디어 등록 / 수정</h3>
                         </header>
                         <div class="page-body">
                             <div class="form-unit">
@@ -127,8 +127,8 @@
                                 <span><input id="input-media-name" type="text" placeholder="명칭 입력" required/></span>
                             </div>
                             <div class="form-unit">
-                                <label for="input-media-id">미디어 설명</label>
-                                <span><input id="input-media-id" type="text" placeholder="설명 입력" required/></span>
+                                <label for="input-media-desc">미디어 설명</label>
+                                <span><input id="input-media-desc" type="text" placeholder="설명 입력" required/></span>
                             </div>
                             <div class="form-unit">
                                 <button type="submit">등록</button>
@@ -155,13 +155,13 @@
                             </ol>
                         </div>
                         <header class="page-header"> 
-                            <h3>미디어 그룹 등록</h3>
+                            <h3>미디어 그룹 등록 / 수정</h3>
                         </header>
                         <div class="page-body">
                             <div class="form-unit">
                                 <label for="select-media">미디어</label>      
                                 <select id="select-media">
-                                    <option>선택선택선택선택선택선택선택선택선택선택선택선택선택선택</option>
+                                    <option>미디어 선택</option>
                                     <option>디지털 VM</option>
                                     <option>디지털 COLUMN</option>
                                     <option>디지털 CEILING</option>
@@ -175,8 +175,8 @@
                                 </select>
                             </div>
                             <div class="form-unit">
-                                <label for="input-media-group-number">그룹 명칭</label>
-                                <span><input id="input_media-group-number" type="text" placeholder="명칭 입력" required/></span>
+                                <label for="input-media-group-name">그룹 명칭</label>
+                                <span><input id="input-media-group-name" type="text" placeholder="명칭 입력" required/></span>
                             </div>
                             <div class="form-unit">
                                 <label for="input-media-group-desc">설명</label>
@@ -185,7 +185,7 @@
                             <div class="form-unit wide">
                                 <label for="select-number">디바이스 수량</label>      
                                 <select id="select-number">
-                                    <option>수량</option>
+                                    <option>수량 선택</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -201,12 +201,150 @@
                 </section>
                 <section>
                     <div class="page">
-                        <h3>페이지 제목 3</h3>
+                        <header class="page-header"> 
+                            <h3>디바이스 목록</h3>
+                        </header>
+                        <div class="page-body">
+                            <div class="form-tab">
+                                <ol class="form-tab-menu clearbox">
+                                    <li class="on"><a href="#">미등록 디바이스</a></li>
+                                    <li><a href="#">디지털 VM</a></li>
+                                    <li><a href="#">디지털 COLUMN</a><li>
+                                    <li><a href="#">디지털 CEILING</a></li>
+                                    <li><a href="#">인포 KIOSK</a></li>
+                                    <li><a href="#">멀티비전</a></li>
+                                    <li><a href="#">E/V</a></li>
+                                    <li><a href="#">문화센터</a></li>
+                                    <li><a href="#">티켓부스</a></li>
+                                    <li><a href="#">식품관</a></li>
+                                    <li><a href="#">5층</a></li>
+                                </ol>
+                                <div class="form-tab-content">
+                                    <div class="on">
+                                        <ol class="form-list">
+                                            <li>
+                                                <span>0</span><span class="long">미디어</span><span>그룹</span><span class="long">디바이스</span>
+                                                <span class="long">IP 주소</span><span class="wide">MAC 주소</span><span>위치</span><span>설명</span><span class="middle">설치일</span><span>수정</span><span>삭제</span>
+                                            </li>
+                                            <li>
+                                                <span>1</span><span class="long">디지털 VM</span><span>VM 01</span><span class="long">DVM0101</span>
+                                                <span class="long">192.111.101.101</span><span class="wide">AA-AA-AA-AA-AA-AA</span><span>왼쪽</span><span>설명</span><span class="middle">2015.06.06</span><span><button>수정</button></span><span><button>삭제</button></span>
+                                            </li>
+                                            <li>
+                                                <span>2</span><span class="long">디지털 VM</span><span>VM 01</span><span class="long">DVM0102</span>
+                                                <span class="long">192.111.101.102</span><span class="wide">AA-AA-AA-AA-AA-AA</span><span>중간</span><span>설명</span><span class="middle">2015.06.06</span><span><button>수정</button></span><span><button>삭제</button></span>
+                                            </li>
+                                            <li>
+                                                <span>3</span><span class="long">디지털 VM</span><span>VM 01</span><span class="long">DVM0103</span>
+                                                <span class="long">192.111.101.103</span><span class="wide">AA-AA-AA-AA-AA-AA</span><span>오른쪽</span><span>설명</span><span class="middle">2015.06.06</span><span><button>수정</button></span><span><button>삭제</button></span>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div>동적 생성</div>
+                                </div>
+                            </div>
+                        </div>
+                        <header class="page-header"> 
+                            <h3>디바이스 등록 / 수정</h3>
+                        </header>
+                        <div class="page-body">
+                            <div class="form-unit">
+                                <label for="input-device-name">이름</label>
+                                <span><input id="input-device-name" type="text" placeholder="이름 입력" required/></span>
+                            </div>
+                            <div class="form-unit">
+                                <label for="input-device-ip">IP 주소</label>
+                                <span><input id="input-device-ip" type="text" placeholder="192.168.0.1" required/></span>
+                            </div>
+                            <div class="form-unit">
+                                <label for="input-device-mac">MAC 주소</label>
+                                <span><input id="input-device-mac" type="text" placeholder="255.255.255.255" required/></span>
+                            </div>
+                            <div class="form-unit">
+                                <label for="input-device-loca">위치</label>
+                                <span><input id="input-device-loca" type="text" placeholder="위치 입력" required/></span>
+                            </div>
+                            <div class="form-unit">
+                                <label for="input-device-desc">설명</label>
+                                <span><input id="input-device-desc" type="text" placeholder="설명 입력" required/></span>
+                            </div>
+                            <div class="form-unit">
+                                <label for="input-device-date">설치일</label>
+                                <span><input id="input-device-date" type="text" placeholder="2015.12.24" required/></span>
+                            </div>
+                            <div class="form-unit">
+                                <button type="submit">등록</button>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <section>
                     <div class="page">
-                        <h3>페이지 제목 4</h3>
+                        <header class="page-header"> 
+                            <h3>미디어 디바이스 연결</h3>
+                        </header>
+                        <div class="page-body">
+                            <div class="form-tab">
+                                <ol class="form-tab-menu clearbox">
+                                    <li class="on"><a href="#">디지털 VM</a></li>
+                                    <li><a href="#">디지털 COLUMN</a></li>
+                                    <li><a href="#">디지털 CEILING</a></li>
+                                    <li><a href="#">인포 KIOSK</a></li>
+                                    <li><a href="#">멀티비전</a></li>
+                                    <li><a href="#">E/V</a></li>
+                                    <li><a href="#">문화센터</a></li>
+                                    <li><a href="#">티켓부스</a></li>
+                                    <li><a href="#">식품관</a></li>
+                                    <li><a href="#">5층</a></li>
+                                </ol>
+                                <div class="form-tab-content">
+                                    <div class="on">
+                                        <ol class="form-list">
+                                            <li>
+                                                <span>0</span><span class="long">미디어</span><span>그룹</span>
+                                                <span class="long">디바이스</span>
+                                                <span class="long">IP 주소</span><span class="wide">MAC 주소</span><span>위치</span><span>설명</span><span class="middle">설치일</span><span>수정</span><span>삭제</span>
+                                            </li>
+                                            <li>
+                                                <span>1</span><span class="long">디지털 VM</span><span>VM 01</span>
+                                                <span class="long"><select>
+                                                    <option>선택</option>
+                                                    <option>DVM0101</option>
+                                                    <option>DVM0102</option>
+                                                    <option>DVM0103</option>
+                                                </select></span>
+                                                <span class="long">192.111.101.101</span><span class="wide">AA-AA-AA-AA-AA-AA</span><span>왼쪽</span><span>설명</span><span class="middle">2015.06.06</span><span><button>수정</button></span><span><button>삭제</button></span>
+                                            </li>
+                                            <li>
+                                                <span>2</span><span class="long">디지털 VM</span><span>VM 01</span>
+                                                <span class="long"><select>
+                                                    <option>선택</option>
+                                                    <option>DVM0101</option>
+                                                    <option>DVM0102</option>
+                                                    <option>DVM0103</option>
+                                                </select></span>
+                                                <span class="long">192.111.101.102</span><span class="wide">AA-AA-AA-AA-AA-AA</span><span>중간</span><span>설명</span><span class="middle">2015.06.06</span><span><button>수정</button></span><span><button>삭제</button></span>
+                                            </li>
+                                            <li>
+                                                <span>3</span><span class="long">디지털 VM</span><span>VM 01</span>
+                                                <span class="long"><select>
+                                                    <option>선택</option>
+                                                    <option>DVM0101</option>
+                                                    <option>DVM0102</option>
+                                                    <option>DVM0103</option>
+                                                </select></span>
+                                                <span class="long">192.111.101.103</span><span class="wide">AA-AA-AA-AA-AA-AA</span><span>오른쪽</span><span>설명</span><span class="middle">2015.06.06</span><span><button>수정</button></span><span><button>삭제</button></span>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div>동적 생성</div>
+                                </div>
+                            </div>
+                            <div class="form-unit clearbox max">
+                                <button type="submit">저장</button>
+                                <button type="submit">편집</button>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <section>

@@ -2,8 +2,6 @@
 
 .pages-container div.page {
     padding: 20px;
-    /*height: 1000px;*/
-    
 }
 .pages-container .page-header > h3 {
     font-size: 16px;
@@ -18,7 +16,7 @@
 
 /*폼 - 유닛*/
 .form-unit {
-    padding-bottom: 4px;
+    margin-bottom: 4px;
     max-width: 300px;
 }
 .form-unit > label { 
@@ -49,17 +47,21 @@
 .form-unit > button { 
     height: 26px;
     line-height: 26px;
-    position: relative;
-    left: 220px;
+    float: right;
     padding: 0 25px;
     font-size: 12px;
+    margin-left: 4px;
 }
 
 /*폼 - 리스트*/
 .form-list {
     border: 1px solid #ddd;
-    font-size: 12px;
+    overflow: auto;
 } 
+.form-list ol, .form-list ul {
+    overflow: visible;
+    max-width: 1000px;
+}
 .form-list > li {
     border-bottom: 1px solid #ddd;
     height: 25px;
@@ -96,24 +98,30 @@
 } 
 .form-list > li span button {
     width: 100%;
-    height: 21px;
-    font-size: 12px;
+    height: 19px;
+    font-size: 11px;
     padding-top: 2px;
-/*    margin-top: 2px;*/
-} 
+    margin-top: 3px;
+}
 
 /*허용 길이*/
 /*.form-list > li > span.short { 
-    width: 25px;
+width: 25px;
 }*/
-/*.form-list > li > span.middle { 
-    width: 75px;
+/*.form-list > li > span.normal { 
+width: 75px;
 }*/
+.form-list > li > span.middle { 
+    width: 100px;
+}
 .form-list > li > span.long { 
     width: 125px;
 }
 .form-list > li > span.wide { 
     width: 175px;
+}
+.form-unit.max { 
+    max-width: none;
 }
 
 /*폼 - 셀렉트*/
@@ -129,29 +137,62 @@
 
 /*폼 - 리스트 - 셀렉트*/
 .form-list > li span select {
-    margin-top: 3px;
-    padding: 3px 0 2px 0;
-}
-.form-list > li span.select { 
-    width: 110px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-.form-list > li span.select > select { 
-    width: inherit;
+    width: 100%;
+    height: 19px;
+    font-size: 12px;
 }
 
-/*폼 - 셀렉트*/
-
-.form-unit > select ~ button { 
+/*폼 - 탭 콘트롤 - 메뉴*/
+.form-tab {
+    margin-bottom: 4px;
+}
+.form-tab .form-tab-menu li {
+    float: left;
+    height: 26px;
+    line-height: 26px;
+    margin-top: 6px;
+    margin-left: -1px;
+}
+.form-tab .form-tab-menu li.on {
+    height: 32px;
+    line-height: 32px;
     margin-top: 0;
-    left: 0;
+    margin-left: 0;
 }
-.form-unit > select > option { 
-
+.form-tab .form-tab-menu li a {
+    background: #eee;
+    color: #555;
+    border: 1px solid #ddd;
+    border-bottom: 0px;
+    border-radius: 5px 5px 0 0px;
+    padding: 0 10px;
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+.form-tab .form-tab-menu li.on a {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-bottom: 0px;
+    font-weight: bold; 
+    margin-top: 1px 
 }
 
-
+/*폼 - 탭 콘트롤 - 콘텐츠*/
+.form-tab .form-tab-content {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.form-tab .form-tab-content > div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: none;
+}
+.form-tab .form-tab-content > div.on 
+{
+    display: block;  
+}
 
 
 
