@@ -109,6 +109,7 @@ $(function() {
         $(this).addClass('on')
             .siblings().removeClass('on');
         
+        console.log($(this).index());
         $formTabContent.find('div').eq($(this).index()).addClass('on')
             .siblings().removeClass('on');
         
