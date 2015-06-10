@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+
+        <title>태스트 - 현대백화점 판교점 CMS</title>
+        
+        <style>
+        * { margin: 0;  padding: 0; }
+        a { outline: 0; text-decoration: none; color: #555; }
+        ol, ul { list-style: none; overflow: visible; }
+        li { list-style: none; }
+        html, body { 
+            height: 100%;
+            background: #fff; 
+            font-size: 12px; 
+        }
+        body { 
+            width: 100%;  
+            min-width: 760px;
+            font-family: 'NG', 'Helvetica', sans-serif;
+        }     
+            
+        .list {
+            position: relative;
+            background: #4a4a4a;
+            width: 100%;
+            z-index: 3;
+        }
+        .list li {
+            font-size: 12px;
+            border-bottom: 1px solid #6f6f6f; 
+            box-sizing: border-box;
+        }
+        .list a {
+            color: #afafaf;
+            height: 26px;
+            line-height: 26px;
+            box-sizing: border-box;
+            padding-left: 20px;
+        }
+        .list li:hover a, 
+        .list li:focus a, 
+        .list li.on a {
+            color: #fff;
+        }
+        .index-of-selected {
+            padding: 20px;
+        }
+        </style>
+    </head>
+    
+    <body id="body" class="body">
+        
+        <ul class="list">
+            <li class="on"><a href="#">미디어 등록</a></li>
+            <li><a href="index.html">미디어그룹 등록</a></li>
+            <li><a href="index.html">디바이스 등록</a></li>
+            <li><a href="index.html">미디어 디바이스 연결</a></li>
+            <li><a href="index.html">버전관리</a></li>
+        </ul>
+        
+        <h1 class="index-of-selected"></h1>
+
+        <!--스크립트-->
+        <script src="jquery-1.11.3.min.js"></script> 
+        <script src="jquery-ui-1.11.4.min.js"></script> 
+        <script src="prefixfree.min.js"></script>
+        <script src="default.js"></script>
+    </body>
+</html>

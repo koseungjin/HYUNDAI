@@ -1,3 +1,5 @@
+var testIndex = 0;
+
 $(function() {  	
     
     /*현재 윈도우사이즈 실시간보기*/
@@ -12,6 +14,8 @@ $(function() {
             viewportHeight = window.innerHeight;
         }  
         $viewportInfo.text(viewportWidth + ' x ' + viewportHeight);
+        
+        $('.lnb').find('li:first-child > a').trigger('click');
     }
 
     $window.on({
@@ -84,6 +88,9 @@ $(function() {
         // 섹션(페이지) 활성화        
         updateSection($clickItem.index());
         updatePageIndicator();
+        
+        testIndex = $clickItem.index();
+        console.log(testIndex);
     });
     
     /*섹션(페이지) 업데이트*/
