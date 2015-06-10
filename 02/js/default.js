@@ -45,21 +45,27 @@ $(function() {
 
     /*메인메뉴*/
     $gnb.find('li').on('click', function(event) {
-        event.preventDefault();
         
-        $(this).addClass('on')
-            .siblings().removeClass('on');
-        
-        // 서브메뉴 활성화
-        var $indexGnb = $(this).index();
-        $lnb.find('ul').removeClass()
-            .eq($indexGnb).addClass('on');
-        
-        // 서브메뉴 초기화
-        $lnb.find('ul[class="on"] > li:first-child')
-            .addClass('on')
-            .siblings().removeClass('on');
-        
+        if ($(this).hasClass('on')) {
+            /*event.preventDefault();*/
+            return;
+        }
+        else {
+
+            $(this).addClass('on')
+                .siblings().removeClass('on');
+
+            // 서브메뉴 활성화
+            var $indexGnb = $(this).index();
+            $lnb.find('ul').removeClass()
+                .eq($indexGnb).addClass('on');
+
+            // 서브메뉴 초기화
+            $lnb.find('ul[class="on"] > li:first-child')
+                .addClass('on')
+                .siblings().removeClass('on');
+        }
+
         updateSection(0);
         updatePageIndicator();
     });
