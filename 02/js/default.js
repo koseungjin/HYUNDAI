@@ -44,19 +44,21 @@ $(function() {
     });
 
     /*메인메뉴*/
-    $gnb.find('li').on('click', function(event) {
+    $gnb.find('li').on('click', 'a', function(event) {
         
-        if ($(this).hasClass('on')) {
-            /*event.preventDefault();*/
+        var $clickItem = $(this).parent('li');
+        
+        if (!$clickItem.hasClass('on')) {
             return;
         }
-        else {
-
-            $(this).addClass('on')
+        else { 
+            event.preventDefault();
+            
+            $clickItem.addClass('on')
                 .siblings().removeClass('on');
 
             // 서브메뉴 활성화
-            var $indexGnb = $(this).index();
+            var $indexGnb = $clickItem.index();
             $lnb.find('ul').removeClass()
                 .eq($indexGnb).addClass('on');
 
@@ -71,14 +73,16 @@ $(function() {
     });
     
     /*서브메뉴*/
-    $lnb.find('li').on('click', function(event) {
+    $lnb.find('li').on('click', 'a', function(event) {
+        var $clickItem = $(this).parent('li');
+        
         event.preventDefault();
         
-        $(this).addClass('on')
+        $clickItem.addClass('on')
             .siblings().removeClass('on');
         
         // 섹션(페이지) 활성화        
-        updateSection($(this).index());
+        updateSection($clickItem.index());
         updatePageIndicator();
     });
     
@@ -101,18 +105,19 @@ $(function() {
     
     /*폼 - 탭 콘트롤*/
     var $formTabMenu = $('.form-tab-menu'),
-        $formTabContent = $('.form-tab-content');
+        $formTab = $formTabMenu.parent('.form-tab'),
+        $formTabContentItem = $formTab.find('.form-tab-content > li');
     
-    $formTabMenu.find('li').on('click', function(event) {
+    $formTabMenu.find('li').on('click', 'a', function(event) {
         event.preventDefault();
 
-        $(this).addClass('on')
+        $(this).parent('li').addClass('on')
             .siblings().removeClass('on');
         
-        console.log($(this).index());
-        $formTabContent.find('div').eq($(this).index()).addClass('on')
+        var index = $(this).parent('li').index();
+        $formTabContentItem.eq(index).addClass('on')
             .siblings().removeClass('on');
-        
+            
     });
 });
 
