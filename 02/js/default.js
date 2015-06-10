@@ -104,24 +104,19 @@ $(function() {
     }
     
     /*폼 - 탭 콘트롤*/
-    var $formTabMenu = $('.form-tab-menu');
+    var $formTab = $('.form-tab');
     
-    $formTabMenu.find('li').on('click', 'a', function(event) {
+    $formTab.find('.form-tab-menu > li').on('click', 'a', function(event) {
         event.preventDefault();
         
         var $clickItem = $(this).parent('li');
-        
         $clickItem.addClass('on')
             .siblings().removeClass('on');
 
-        var $formTab = $clickItem.parent('ol.form-tab'),
-            $formTabContentItem = $formTab.find('.form-tab-content > li');
-        
-        var indexTab = $clickItem.index();
-        console.log(indexTab);
-        $formTabContentItem.addClass('on')
-            .siblings().removeClass('on');
-            
+        var indexTab = $clickItem.index(),
+            $formTab = $clickItem.parent().parent();
+        $formTab.find('.form-tab-content > li').removeClass()
+            .eq(indexTab).addClass('on');
     });
 });
 
